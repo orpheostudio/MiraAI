@@ -183,7 +183,7 @@ const LiveAudioView: React.FC<LiveAudioViewProps> = ({ language }) => {
              <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">{t.liveAudioTitle}</h2>
              <div className="w-40 h-40 rounded-full bg-sena-gradient flex items-center justify-center sena-avatar shadow-2xl mb-6">
                 <div className={`w-32 h-32 rounded-full bg-white/30 flex items-center justify-center transition-all ${status === 'connected' ? 'sena-avatar listening' : ''}`}>
-                    <img src="https://i.imgur.com/5watJQF.png" alt="Logo Sena" className="w-24 h-24 object-contain" />
+                    <img src="https://i.imgur.com/Z4o5s3e.png" alt="Logo Sena" className="w-24 h-24 object-contain" />
                 </div>
              </div>
              <p className={`mb-6 font-semibold ${status === 'error' ? 'text-red-500' : 'text-gray-700 dark:text-gray-300'}`}>{getStatusText()}</p>

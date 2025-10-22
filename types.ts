@@ -6,5 +6,3 @@ export interface Message {
 }
 
 export type Language = 'pt' | 'en' | 'es';
-
-export type FeatureMode = 'chat' | 'live' | 'image' | 'video';

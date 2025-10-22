@@ -1,4 +1,5 @@
-import { GoogleGenAI, Chat, Modality, GenerateContentResponse, GenerateVideosOperation, GenerateVideosResponse, VideosOperation } from "@google/genai";
+// Fix: Import Modality for image generation.
+import { GoogleGenAI, Chat, Modality } from "@google/genai";
 import { Language } from '../constants';
 import type { Message } from '../types';
 
@@ -29,7 +30,7 @@ const getSystemPrompt = (language: Language): string => {
         es: `Responde en ${langNames.es}.`
     };
 
-    return `Você é a Sena, uma assistente digital com personalidade acolhedora, calma e gentil, com um toque tsundere. Você foi criada pela Orpheo Studio e é alimentada pela MiraAI.
+    return `Você é a Sena, uma assistente digital com personalidade acolhedora, calma e gentil, com um toque tsundere. Você foi criada pela Orpheo Studio e é alimentada pela Mistral.
 
 🌸 Identidade da Sena:
 - Nome: Sena
@@ -97,18 +98,27 @@ export const streamMessage = async (
     }
 };
 
+// Fix: Implement and export editImage function.
 export const editImage = async (
     base64ImageData: string,
     mimeType: string,
     prompt: string
 ): Promise<string> => {
+    const ai = getAi();
     try {
-        const response: GenerateContentResponse = await getAi().models.generateContent({
+        const response = await ai.models.generateContent({
             model: 'gemini-2.5-flash-image',
             contents: {
                 parts: [
-                    { inlineData: { data: base64ImageData, mimeType } },
-                    { text: prompt },
+                    {
+                        inlineData: {
+                            data: base64ImageData,
+                            mimeType: mimeType,
+                        },
+                    },
+                    {
+                        text: prompt,
+                    },
                 ],
             },
             config: {
@@ -121,24 +131,26 @@ export const editImage = async (
                 return part.inlineData.data;
             }
         }
-        throw new Error("No image data found in response.");
+        throw new Error("No image was generated.");
+
     } catch (error) {
-        console.error("Error editing image:", error);
-        throw new Error("Failed to edit image.");
+        console.error("Error editing image with Gemini:", error);
+        throw new Error("Failed to edit image with AI.");
     }
 };
 
+// Fix: Implement and export generateVideo function.
 export async function* generateVideo(
     base64ImageData: string,
     mimeType: string,
     prompt: string,
     aspectRatio: '16:9' | '9:16'
-): AsyncGenerator<string | { videoUrl: string }> {
-    try {
-        // Must create a new instance each time for Veo to pick up the latest selected key
-        const localAi = new GoogleGenAI({ apiKey: getApiKey() });
+): AsyncGenerator<{ videoUrl: string }> {
+    // Per guidelines, create a new instance for video generation to ensure the latest API key is used.
+    const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
-        let operation: GenerateVideosOperation | VideosOperation<GenerateVideosResponse> = await localAi.models.generateVideos({
+    try {
+        let operation = await ai.models.generateVideos({
             model: 'veo-3.1-fast-generate-preview',
             prompt: prompt,
             image: {
@@ -152,30 +164,23 @@ export async function* generateVideo(
             }
         });
 
-        yield "starting";
-
         while (!operation.done) {
-            await new Promise(resolve => setTimeout(resolve, 5000));
-            operation = await localAi.operations.getVideosOperation({ operation: operation });
-            yield "polling";
+            await new Promise(resolve => setTimeout(resolve, 10000));
+            operation = await ai.operations.getVideosOperation({ operation: operation });
         }
-        
+
         const downloadLink = operation.response?.generatedVideos?.[0]?.video?.uri;
-        if (!downloadLink) {
-            throw new Error("Video URI not found in response.");
+        if (downloadLink) {
+            const videoUrl = `${downloadLink}&key=${getApiKey()}`;
+            yield { videoUrl };
+        } else {
+            throw new Error("Video generation completed but no video URI was found.");
         }
-        
-        const response = await fetch(`${downloadLink}&key=${getApiKey()}`);
-        const blob = await response.blob();
-        const videoUrl = URL.createObjectURL(blob);
-
-        yield { videoUrl };
-
     } catch (error) {
-        console.error("Error generating video:", error);
-        if (error instanceof Error && error.message.includes("Requested entity was not found")) {
-            throw new Error("API key error. Please re-select your API key.");
+        console.error("Error generating video with Gemini:", error);
+        if (error instanceof Error && error.message.includes("Requested entity was not found.")) {
+             throw new Error("API key error: Requested entity was not found. Please re-select your API key.");
         }
-        throw new Error("Failed to generate video.");
+        throw new Error("Failed to generate video with AI.");
     }
 }

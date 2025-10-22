@@ -16,7 +16,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ language, onStartChat }) 
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-6">
             <div className="w-32 h-32 rounded-full bg-sena-gradient flex items-center justify-center sena-avatar shadow-2xl">
-              <img src="https://i.imgur.com/5watJQF.png" alt="Logo Sena" className="w-24 h-24 object-contain" />
+              <img src="https://i.imgur.com/Z4o5s3e.png" alt="Logo Sena" className="w-24 h-24 object-contain" />
             </div>
           </div>
           <h1 className="text-6xl font-bold mb-3">

@@ -18,9 +18,9 @@ export const translations: Record<Language, any> = {
         welcomeTerms: 'Li e aceito os <a href="https://termos.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Termos de Uso</a> e <a href="https://políticas.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Políticas de Privacidade</a> da Orpheo Studio.',
         startButton: 'Começar a conversar 🌸',
         headerTagline: 'Tecnologia com alma gentil',
-        statusText: 'MiraAI Conectado',
+        statusText: 'Mistral Conectado',
         listeningText: 'Ouvindo...',
-        footerTagline: 'As respostas da Sena utilizam MiraAI by Orpheo Studio. 🌸',
+        footerTagline: 'As respostas da Sena utilizam Mistral by Orpheo Studio. 🌸',
         footerDisclaimer: 'Sena pode cometer erros. Verifique informações importantes.',
         inputPlaceholder: 'Digite sua pergunta...',
         greeting: 'Olá! Eu sou a Sena. 🌸<br>A tecnologia com alma gentil.<br><br>Pode me chamar para o que precisar. Eu aprendo com você.',
@@ -32,11 +32,12 @@ export const translations: Record<Language, any> = {
         ],
         errorResponse: 'Desculpe, tive um problema para processar sua mensagem. Pode tentar novamente? 😔',
         
-        // New Features
+        // Features
         chatMode: 'Chat',
         liveMode: 'Ao Vivo',
         imageMode: 'Imagem',
         videoMode: 'Vídeo',
+        toolsMode: 'Ferramentas',
         
         imageEditorTitle: 'Editor de Imagens ✨',
         videoGeneratorTitle: 'Gerador de Vídeos 🎬',
@@ -63,6 +64,30 @@ export const translations: Record<Language, any> = {
         statusConnected: 'Conectado! Fale agora.',
         statusDisconnected: 'Desconectado',
         statusError: 'Erro de conexão',
+
+        // Tools
+        toolsTitle: 'Ferramentas Úteis 🛠️',
+        toolsDescription: 'Aqui estão algumas ferramentas simples para ajudar no seu dia a dia.',
+        qrCodeGeneratorTitle: 'Gerador de QR Code',
+        qrCodeGeneratorDescription: 'Crie um QR Code para um link ou texto.',
+        qrCodeInputPlaceholder: 'Digite o texto ou URL aqui',
+        qrCodeGenerateButton: 'Gerar QR Code',
+        passwordGeneratorTitle: 'Gerador de Senhas',
+        passwordGeneratorDescription: 'Crie senhas fortes e seguras.',
+        passwordLength: 'Comprimento:',
+        passwordIncludeNumbers: 'Incluir números',
+        passwordIncludeSymbols: 'Incluir símbolos',
+        passwordGenerateButton: 'Gerar Nova Senha',
+        passwordCopied: 'Senha copiada!',
+        appSettingsTitle: 'Configurações do App',
+        appSettingsDescription: 'Ajuste o idioma, a aparência e reporte problemas.',
+        darkModeLabel: 'Modo Escuro',
+        languageLabel: 'Idioma',
+        reportBugLabel: 'Reportar um Bug',
+
+        // Welcome Email Notification
+        welcomeEmailSubject: '🎉 Novo Usuário na Sena!',
+        welcomeEmailBody: 'Um novo usuário começou a usar a Sena.\n\n- ID do Dispositivo: {deviceId}\n- Idioma: {language}\n\n🌸',
     },
     en: {
         welcomeTagline: 'Technology with a gentle soul.',
@@ -79,25 +104,26 @@ export const translations: Record<Language, any> = {
         welcomeTerms: 'I have read and accept the <a href="https://termos.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Terms of Use</a> and <a href="https://políticas.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Privacy Policy</a> of Orpheo Studio.',
         startButton: 'Start chatting 🌸',
         headerTagline: 'Technology with a gentle soul',
-        statusText: 'Online and ready to help',
+        statusText: 'Mistral Connected',
         listeningText: 'Listening...',
-        footerTagline: 'Easy as talking. 🌸',
+        footerTagline: 'Sena\'s responses use Mistral by Orpheo Studio. 🌸',
         footerDisclaimer: 'Sena may make mistakes. Verify important information.',
         inputPlaceholder: 'Type your question...',
         greeting: 'Hello! I am Sena. 🌸<br>Technology with a gentle soul.<br><br>Call me for anything you need. I learn with you.',
         suggestions: [
-            'Help me understand what artificial intelligence means?',
+            'What can you do?',
             'How do I download an app on my phone?',
-            'What does 5G mean?',
-            'I want to start meditating'
+            'Can you explain Orpheo\'s terms and policies?',
+            'How to donate to Orpheo Studio?'
         ],
         errorResponse: 'Sorry, I had a problem processing your message. Could you please try again? 😔',
         
-        // New Features
+        // Features
         chatMode: 'Chat',
         liveMode: 'Live',
         imageMode: 'Image',
         videoMode: 'Video',
+        toolsMode: 'Tools',
 
         imageEditorTitle: 'Image Editor ✨',
         videoGeneratorTitle: 'Video Generator 🎬',
@@ -124,6 +150,30 @@ export const translations: Record<Language, any> = {
         statusConnected: 'Connected! Speak now.',
         statusDisconnected: 'Disconnected',
         statusError: 'Connection Error',
+
+        // Tools
+        toolsTitle: 'Useful Tools 🛠️',
+        toolsDescription: 'Here are some simple tools to help with your daily tasks.',
+        qrCodeGeneratorTitle: 'QR Code Generator',
+        qrCodeGeneratorDescription: 'Create a QR Code for a link or text.',
+        qrCodeInputPlaceholder: 'Enter text or URL here',
+        qrCodeGenerateButton: 'Generate QR Code',
+        passwordGeneratorTitle: 'Password Generator',
+        passwordGeneratorDescription: 'Create strong and secure passwords.',
+        passwordLength: 'Length:',
+        passwordIncludeNumbers: 'Include numbers',
+        passwordIncludeSymbols: 'Include symbols',
+        passwordGenerateButton: 'Generate New Password',
+        passwordCopied: 'Password copied!',
+        appSettingsTitle: 'App Settings',
+        appSettingsDescription: 'Adjust language, appearance, and report issues.',
+        darkModeLabel: 'Dark Mode',
+        languageLabel: 'Language',
+        reportBugLabel: 'Report a Bug',
+
+        // Welcome Email Notification
+        welcomeEmailSubject: '🎉 New User on Sena!',
+        welcomeEmailBody: 'A new user has started using Sena.\n\n- Device ID: {deviceId}\n- Language: {language}\n\n🌸',
     },
     es: {
         welcomeTagline: 'Tecnología con alma gentil.',
@@ -140,25 +190,26 @@ export const translations: Record<Language, any> = {
         welcomeTerms: 'He leído y acepto los <a href="https://termos.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Términos de Uso</a> y <a href="https://políticas.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Políticas de Privacidad</a> de Orpheo Studio.',
         startButton: 'Comenzar a conversar 🌸',
         headerTagline: 'Tecnología con alma gentil',
-        statusText: 'En línea y lista para ayudar',
+        statusText: 'Mistral Conectado',
         listeningText: 'Escuchando...',
-        footerTagline: 'MiraAI Conectado. 🌸',
+        footerTagline: 'Las respuestas de Sena utilizan Mistral por Orpheo Studio. 🌸',
         footerDisclaimer: 'Sena puede cometer errores. Verifica información importante.',
         inputPlaceholder: 'Escribe tu pregunta...',
         greeting: '¡Hola! Soy Sena. 🌸<br>Tecnología con alma gentil.<br><br>Llámame para lo que necesites. Aprendo contigo.',
         suggestions: [
-            '¿Me ayudas a entender qué significa inteligencia artificial?',
+            '¿Qué puedes hacer?',
             '¿Cómo descargo una app en el celular?',
-            '¿Qué significa 5G?',
-            'Quiero empezar a meditar'
+            '¿Puedes explicarme los términos y políticas de Orpheo?',
+            '¿Cómo donar a Orpheo Studio?'
         ],
         errorResponse: 'Disculpa, tuve un problema al procesar tu mensaje. ¿Podrías intentarlo de nuevo? 😔',
 
-        // New Features
+        // Features
         chatMode: 'Chat',
         liveMode: 'En Vivo',
         imageMode: 'Imagen',
         videoMode: 'Video',
+        toolsMode: 'Herramientas',
 
         imageEditorTitle: 'Editor de Imágenes ✨',
         videoGeneratorTitle: 'Generador de Videos 🎬',
@@ -185,5 +236,29 @@ export const translations: Record<Language, any> = {
         statusConnected: '¡Conectado! Habla ahora.',
         statusDisconnected: 'Desconectado',
         statusError: 'Error de Conexión',
+
+        // Tools
+        toolsTitle: 'Herramientas Útiles 🛠️',
+        toolsDescription: 'Aquí tienes algunas herramientas sencillas para ayudarte en tu día a día.',
+        qrCodeGeneratorTitle: 'Generador de Códigos QR',
+        qrCodeGeneratorDescription: 'Crea un código QR para un enlace o texto.',
+        qrCodeInputPlaceholder: 'Introduce el texto o la URL aquí',
+        qrCodeGenerateButton: 'Generar Código QR',
+        passwordGeneratorTitle: 'Generador de Contraseñas',
+        passwordGeneratorDescription: 'Crea contraseñas fuertes y seguras.',
+        passwordLength: 'Longitud:',
+        passwordIncludeNumbers: 'Incluir números',
+        passwordIncludeSymbols: 'Incluir símbolos',
+        passwordGenerateButton: 'Generar Nueva Contraseña',
+        passwordCopied: '¡Contraseña copiada!',
+        appSettingsTitle: 'Configuración de la App',
+        appSettingsDescription: 'Ajusta el idioma, la apariencia y reporta problemas.',
+        darkModeLabel: 'Modo Oscuro',
+        languageLabel: 'Idioma',
+        reportBugLabel: 'Reportar un Error',
+
+        // Welcome Email Notification
+        welcomeEmailSubject: '🎉 ¡Nuevo Usuario en Sena!',
+        welcomeEmailBody: 'Un nuevo usuario ha comenzado a usar Sena.\n\n- ID del Dispositivo: {deviceId}\n- Idioma: {language}\n\n🌸',
     }
 };
