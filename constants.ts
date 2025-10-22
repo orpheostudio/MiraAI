@@ -52,10 +52,10 @@ export const translations: Record<Language, any> = {
         // Video Generator
         aspectRatio: 'Proporção',
         generatingVideoStatus: 'Gerando seu vídeo... Isso pode levar alguns minutos. ⏳',
-        selectApiKeyPrompt: 'Para gerar vídeos, por favor selecione uma chave de API do Google AI Studio.',
-        selectKeyButton: 'Selecionar Chave de API',
-        billingInfoLink: 'Para mais informações sobre cobrança, visite a documentação.',
-        videoError: 'Ocorreu um erro ao gerar o vídeo. Por favor, verifique sua chave de API e tente novamente.',
+        selectApiKeyPrompt: 'Esta função estará disponível em breve.',
+        selectKeyButton: 'Em Desenvolvimento.',
+        billingInfoLink: 'Para mais informações ou dúvidas envie-nos um e-mail sac.studiotsukiyo@outlook.com.',
+        videoError: 'Em Breve.',
         
         // Live Audio
         connect: 'Conectar',
@@ -101,10 +101,10 @@ export const translations: Record<Language, any> = {
             '🗣️ Chat by voice (click the microphone)'
         ],
         welcomeDisclaimer: '⚠️ <strong>Notice:</strong> I am an artificial intelligence and may make mistakes. Always verify important information from reliable sources.',
-        welcomeTerms: 'I have read and accept the <a href="https://termos.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Terms of Use</a> and <a href="https://políticas.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Privacy Policy</a> of Orpheo Studio.',
+        welcomeTerms: 'I have read and accept the <a href="https://termos.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Terms of Use</a> and <a href="https://politicas.orpheostudio.com.br" target="_blank" class="text-purple-600 dark:text-purple-400 underline hover:text-purple-700 dark:hover:text-purple-300">Privacy Policy</a> of Orpheo Studio.',
         startButton: 'Start chatting 🌸',
         headerTagline: 'Technology with a gentle soul',
-        statusText: 'Mistral Connected',
+        statusText: 'MiraAI Connected',
         listeningText: 'Listening...',
         footerTagline: 'Sena\'s responses use Mistral by Orpheo Studio. 🌸',
         footerDisclaimer: 'Sena may make mistakes. Verify important information.',
