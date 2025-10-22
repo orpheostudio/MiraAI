@@ -1,0 +1,8 @@
+{
+  "name": "SENA - Gentle Soul AI",
+  "description": "SENA is a digital assistant with a gentle soul, making technology accessible to everyone. This app is designed to be friendly and helpful, especially for those new to technology.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
